@@ -34,16 +34,18 @@ if ( ! function_exists( 'gray_portfolio_header_style' ) ) :
 	 *
 	 * @see gray_portfolio_custom_header_setup().
 	 */
-	function gray_portfolio_header_style() {
+    /**
+     *
+     */
+    function gray_portfolio_header_style() {
 		$header_text_color = get_header_textcolor();
-
 		/*
 		 * If no custom options for text are set, let's bail.
 		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
 		 */
-		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
-			return;
-		}
+//		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+//			return;
+//		}
 
 		// If we get this far, we have custom styles. Let's do this.
 		?>
@@ -66,6 +68,25 @@ if ( ! function_exists( 'gray_portfolio_header_style' ) ) :
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}
 		<?php endif; ?>
+        <?php
+            if ( is_singular() ) : ?>
+                #masthead {
+                    background: url('<?php echo gray_portfolio_header_image() ?>') no-repeat;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+	        <?php
+            else : ?>
+                #masthead {
+                    background: url('<?php echo get_header_image() ?>') no-repeat;
+                    -webkit-background-size: cover;
+                    -moz-background-size: cover;
+                    -o-background-size: cover;
+                    background-size: cover;
+                }
+         <?php endif; ?>
 		</style>
 		<?php
 	}
