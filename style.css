@@ -1006,9 +1006,10 @@ object {
 .site-description {
 	text-transform: uppercase;
 	display: block;
-	font-size: 26px;
+	font-size: 32px;
 	font-weight: 400;
 	letter-spacing: 5px;
 	backface-visibility: hidden;
 	margin-bottom: 30px;
+	text-shadow: 0 1px black;
 }

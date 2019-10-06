@@ -81,8 +81,8 @@ if ( ! function_exists( 'gray_portfolio_setup' ) ) :
 		) );
         add_theme_support( 'custom-header', array(
             'default-image' => get_template_directory_uri() . '/assets/img/default-img.jpg',
-            'height'      => 491,
-            'width'       => 400,
+            'height'      => 600,
+            'width'       => 800,
         ) );
 	}
 endif;

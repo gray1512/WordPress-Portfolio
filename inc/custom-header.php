@@ -20,8 +20,8 @@ function gray_portfolio_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'gray_portfolio_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 800,
+		'height'                 => 600,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'gray_portfolio_header_style',
 	) ) );
@@ -71,7 +71,8 @@ if ( ! function_exists( 'gray_portfolio_header_style' ) ) :
         <?php
             if ( is_singular() ) : ?>
                 #masthead {
-                    background: url('<?php echo gray_portfolio_header_image() ?>') no-repeat;
+                    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+                    url('<?php echo gray_portfolio_header_image() ?>') no-repeat;
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                     -o-background-size: cover;
@@ -80,7 +81,8 @@ if ( ! function_exists( 'gray_portfolio_header_style' ) ) :
 	        <?php
             else : ?>
                 #masthead {
-                    background: url('<?php echo get_header_image() ?>') no-repeat;
+                    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),
+                    url('<?php echo get_header_image() ?>') no-repeat;
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                     -o-background-size: cover;
