@@ -15,11 +15,10 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme by %1$s', 'gray-portfolio' ), 'GrayP');
-				?>
+            <?php
+            /* translators: 1: Theme name, 2: Theme author. */
+            printf( esc_html__( 'Created by %1$s', 'gray-portfolio' ), 'GrayP');
+            ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

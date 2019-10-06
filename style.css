@@ -615,6 +615,54 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+.menu-toggle {
+	background: Transparent no-repeat;
+	border: none;
+	cursor:pointer;
+	overflow: hidden;
+	outline:none;
+}
+
+.menu-toggle i {
+	color: #eee;
+}
+
+#site-navigation {
+	margin: 0;
+	padding: 1em 0;
+	width: 10em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+#site-navigation.toggled {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+#site-navigation.toggled #primary-menu {
+	padding: 5em 0;
+}
+#site-navigation.toggled .site-title {
+	display: block;
+}
+
+#primary-menu li {
+	width: 100%;
+}
+
+#primary-menu li a {
+	display: block;
+	color: #eee;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+/* Change the link color on hover */
+#primary-menu li a:hover {
+	color: rgba(238, 238, 238, 0.51);
+}
+
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -703,8 +751,20 @@ a:hover, a:active {
 	.menu-toggle {
 		display: none;
 	}
+	.site-title {
+		display: block;
+	}
 	.main-navigation ul {
 		display: block;
+	}
+	#site-navigation {
+		background-color: rgba(0, 0, 0, 0.8);
+		padding: 5em 0;
+	}
+}
+@media screen and (max-width: 37.5em) {
+	.site-title {
+		display: none;
 	}
 }
 
