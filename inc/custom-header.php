@@ -63,7 +63,7 @@ if ( ! function_exists( 'gray_portfolio_header_style' ) ) :
 		// If the user has set a custom color for the text use that.
 		else :
 			?>
-			.site-title a,
+			.site-title a, .menu-title a,
 			.site-description {
 				color: #<?php echo esc_attr( $header_text_color ); ?>;
 			}

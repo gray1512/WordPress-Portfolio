@@ -34,21 +34,38 @@
 				?>
 				<p class="site-description"><?php echo $gray_portfolio_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <i class="fa fa-bars fa-lg"></i>
-            </button>
-            <h3 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h3>
-
-            <?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+		</div><!-- .site-branding -->	
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+		<nav id="site-navigation" class="main-navigation">
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<i class="fa fa-bars fa-lg"></i>
+				</button>
+				<h3 class="site-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>					
+				</h3>
+
+				<h4 class="menu-title">		
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php 
+							$locations = get_nav_menu_locations(); //get all menu locations
+							$menu = wp_get_nav_menu_object($locations['menu-1']);//get the menu object
+							echo '<script>';
+							echo 'console.log('. json_encode( $locations ) .');';
+							echo 'console.log('. json_encode( $menu ) .');';
+							echo '</script>';
+							echo $menu->name;
+						?>
+					</a>									
+				</h4>
+
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				) );
+				?>
+		</nav><!-- #site-navigation -->
